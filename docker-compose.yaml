@@ -1,0 +1,28 @@
+version: "3.6"
+services:
+    redis:
+        container_name: redis
+        ports:
+            - 6379:6379          
+        image: redis:latest
+                
+    continentsserver:
+        container_name: continentsserver
+        ports:
+            - 8081:80
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production   
+        build:
+            context: ./homeassignment.server/homeassignment.server
+            dockerfile: Dockerfile
+        restart: on-failure        
+        depends_on:
+            - redis
+            
+    continentsclient:
+        build:
+            context: ./homeassignment-client
+            dockerfile: Dockerfile
+        ports:
+          - "8080:80"
+                
