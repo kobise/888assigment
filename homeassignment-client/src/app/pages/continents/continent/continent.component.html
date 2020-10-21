@@ -1,0 +1,12 @@
+<div class="content" fxLayout="row wrap"  fxLayoutGap="16px grid" >
+    <div fxLayout="row">
+        <button mat-button (click)="backButton()">back</button>
+    </div>
+    <div *ngIf="!isLoading" class="content" fxLayout="row wrap" fxLayoutGap="10px grid">
+        <div  fxFlex="25%" *ngFor="let country of continent?.countries">
+            <country-card fxLayout="column"  [country]="country" style="border: 1px solid #ccc!important;"></country-card>
+        </div>
+    </div>
+  </div>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+

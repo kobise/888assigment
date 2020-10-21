@@ -1,0 +1,15 @@
+<div style="width: 100%;">
+    <ag-grid-angular *ngIf="!isLoading" style="width: 500px; height: 500px;" class="ag-theme-alpine"
+
+    [rowData]="continents"
+    [columnDefs]="columnDefs"
+
+    animateRows
+    pagination
+
+    (cellClicked)="onCellClicked($event)"
+    >
+    </ag-grid-angular>
+
+</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>

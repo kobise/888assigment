@@ -1,0 +1,41 @@
+<mat-card class="example-card" >
+
+  <mat-card-header >
+  </mat-card-header>
+    <mat-card-content  fxLayout="row">
+      
+      <div fxLayout="column" >
+        <h3 >{{country.code}} </h3>
+        <h1 >{{country.name}} </h1>
+        <ul >
+          <li>Phone: {{country.phone}}</li>
+          <li>Capital: {{country.capital}} </li>
+          <li>Currency: {{country.currency}}</li>
+          <li>Languages: 
+            <mat-chip-list
+              class="example-chip"
+              cdkDropListOrientation="horizontal"
+              >
+              <mat-chip
+                class="example-box"
+                cdkDrag
+                *ngFor="let language of country.languages">
+                {{language.name}}
+              </mat-chip>
+            </mat-chip-list>
+          </li>
+          
+        </ul>
+      </div>
+
+      <img mat-card-avatar class="example-header-image"
+        src="https://www.countryflags.io/{{country.code}}/shiny/64.png"
+        default="https://www.countryflags.io/IL/shiny/64.png" 
+        class="img"
+      >
+      
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+ 
