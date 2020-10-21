@@ -57,7 +57,7 @@ namespace homeassignment.server
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors(
-                   options => options.WithOrigins("http://localhost:4200").AllowAnyMethod()
+                   options => options.AllowAnyOrigin().AllowAnyMethod()
                );
 
             //add swagger

@@ -8,4 +8,8 @@ RUN npm install
 
 COPY . .
 
-ENTRYPOINT ["npm","run","start"]
+RUN npm run build
+
+FROM nginx:1.15.8-alpine
+
+COPY --from=builder /usr/src/app/dist/homeassignment-client/ /usr/share/nginx/html
