@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverUrl:"http://continentsserver"
+  serverUrl:"http://localhost:8081/"
 };
