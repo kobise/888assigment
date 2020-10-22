@@ -19,10 +19,12 @@ The Docker will expose:
 * Port 8081 - for [server-app]
 * Port 6479 - for redis
 
+To run all the project:
+
 ```sh
 docker-compose up
 ```
-This will create & run the 3 images.
+(This command will create & run the 3 images)
 
 
    [client-app]: <http://localhost:8080/>
